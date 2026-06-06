@@ -8,14 +8,6 @@ import logging
 import sys
 from pathlib import Path
 
-# Ensure Unicode output (checkmarks, emoji) works on consoles that default to a
-# legacy code page such as Windows cp1252 — degrade gracefully instead of crashing.
-for _stream in (sys.stdout, sys.stderr):
-    try:
-        _stream.reconfigure(encoding="utf-8", errors="replace")  # type: ignore[union-attr]
-    except (AttributeError, ValueError):
-        pass
-
 import typer
 from rich.console import Console
 from rich.json import JSON
@@ -23,6 +15,15 @@ from rich.panel import Panel
 
 from .agent import TriageAgent, persist_finding
 from .config import get_settings
+
+# Ensure Unicode output (checkmarks, emoji) works on consoles that default to a
+# legacy code page such as Windows cp1252 — degrade gracefully instead of crashing.
+# Must run before the rich Console binds the stream.
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(encoding="utf-8", errors="replace")  # type: ignore[union-attr]
+    except (AttributeError, ValueError):
+        pass
 
 app = typer.Typer(help="SOC Co-Pilot — closed-loop incident triage for Splunk.")
 console = Console()
