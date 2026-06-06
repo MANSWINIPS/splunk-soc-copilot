@@ -1,0 +1,14 @@
+{
+  "event_id": "ES-2026-06-01-0042",
+  "rule_name": "Brute Force Access Behavior Detected",
+  "search_name": "Access - Brute Force Access Behavior Detected - Rule",
+  "_time": "2026-06-01T14:23:11Z",
+  "severity": "high",
+  "user": "j.doe",
+  "src": "203.0.113.47",
+  "dest": "win-app-07.corp.example",
+  "action": "failure",
+  "count": 142,
+  "app": "win:security",
+  "description": "142 failed logons against win-app-07.corp.example for user j.doe in the last 5 minutes from a single external IP."
+}

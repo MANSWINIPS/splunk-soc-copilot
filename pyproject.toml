@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "soc-copilot"
+version = "0.1.0"
+description = "Closed-loop incident triage agent for Splunk using Hosted Models + MCP Server"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+authors = [{ name = "SOC Co-Pilot Contributors" }]
+keywords = ["splunk", "mcp", "security", "soc", "agent", "ai", "hosted-models"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+]
+dependencies = [
+    "splunk-sdk>=2.0.2",
+    "mcp>=1.2.0",
+    "httpx>=0.27.0",
+    "pydantic>=2.6.0",
+    "python-dotenv>=1.0.1",
+    "rich>=13.7.0",
+    "typer>=0.12.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-mock>=3.12.0",
+    "ruff>=0.4.0",
+    "mypy>=1.10.0",
+]
+
+[project.scripts]
+soc-copilot = "soc_copilot.cli:app"
+
+[project.urls]
+Homepage = "https://github.com/YOUR_GH_USER/splunk-soc-copilot"
+Issues = "https://github.com/YOUR_GH_USER/splunk-soc-copilot/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"

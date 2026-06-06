@@ -1,0 +1,7 @@
+_time,user,src,dest,action,event_code
+2026-06-01T14:18:01Z,j.doe,203.0.113.47,win-app-07.corp.example,failure,4625
+2026-06-01T14:18:14Z,j.doe,203.0.113.47,win-app-07.corp.example,failure,4625
+2026-06-01T14:18:29Z,j.doe,203.0.113.47,win-app-07.corp.example,failure,4625
+2026-06-01T14:19:02Z,j.doe,203.0.113.47,win-app-07.corp.example,failure,4625
+2026-06-01T14:22:55Z,j.doe,203.0.113.47,win-app-07.corp.example,success,4624
+2026-06-01T14:23:11Z,j.doe,203.0.113.47,win-app-07.corp.example,success,4672

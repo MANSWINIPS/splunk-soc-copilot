@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "2.0.0",
+  "info": {
+    "title": "SOC Co-Pilot",
+    "id": {
+      "group": null,
+      "name": "soc_copilot",
+      "version": "0.1.0"
+    },
+    "author": [
+      {
+        "name": "SOC Co-Pilot Contributors",
+        "email": "",
+        "company": ""
+      }
+    ],
+    "releaseDate": "2026-06-01",
+    "description": "Closed-loop incident triage agent for Splunk using Hosted Models + MCP Server.",
+    "classification": {
+      "intendedAudience": "IT Security",
+      "categories": ["Security, Fraud & Compliance"],
+      "developmentStatus": "Beta"
+    },
+    "commonInformationModels": null,
+    "license": {
+      "name": "MIT",
+      "uri": "https://opensource.org/licenses/MIT"
+    },
+    "privacyPolicy": null,
+    "releaseNotes": {
+      "name": "Initial release",
+      "text": "Triage agent + analyst dashboard + feedback loop.",
+      "uri": null
+    }
+  },
+  "dependencies": null,
+  "tasks": null,
+  "inputGroups": null,
+  "incompatibleApps": null,
+  "platformRequirements": {
+    "splunk": {
+      "Enterprise": "9.2"
+    }
+  }
+}
